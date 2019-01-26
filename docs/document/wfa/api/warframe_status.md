@@ -679,3 +679,49 @@ Header : {
 - `health` : 任务的剩余点数，不过有些事件并没有该字段，这时就要利用`expiry`进行综合判断
 
 ---
+
+## 追随者
+
+|        请求地址       |请求方式|请求类型|返回数据|
+|:--------------------------------|:----:|:------|:----:|
+|/**stalker**|  GET |   无  | JSON |
+
+### 请求结构
+
+```javascript
+Header : {
+    Authorization: 'Bearer xxxxxxxxxxxxxxxxxx'
+}
+```
+
+### 返回结构
+
+```json
+[
+    {
+        "id": "5c4a15a223e62b6c12aafcf6",
+        "agentType": "Angst",
+        "locationTag": "Angst",
+        "rank": 35,
+        "healthPercent": 0.899469922,
+        "fleeDamage": 50000,
+        "lastDiscoveredTime": "2019-01-26T01:42:26.476Z",
+        "lastDiscoveredAt": "Adaro (Sedna)",
+        "isDiscovered": false,
+        "isUsingTicketing": false,
+        "pid": "5c4a15a223e62b6c12aafcf6false"
+    }
+]
+```
+
+### 数据说明
+
+- `agentType` : 小小黑的名字
+
+- `healthPercent` : 血量，乘100就是血量百分比
+
+- `lastDiscoveredTime`/`lastDiscoveredAt` : 最近一次发现时间/最近一次发现地点
+
+- `isDiscovered`: 是否出现
+
+---
