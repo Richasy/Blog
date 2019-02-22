@@ -1,6 +1,6 @@
 ---
 lang: zh-CN
-title: 关于Img Share
+title: 关于Picture Share
 ---
 
 # 关于 Picture Share
