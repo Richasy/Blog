@@ -9,7 +9,7 @@ Acrylic Markdown是一款基于Windows通用应用平台（UWP）的应用，设
 
 软件支持Markdown的编辑预览，文档的归类管理、导出为HTML、发送邮件等常规功能，能够满足日常所需。
 
-具体支持的Markdown语法，参见[这里]()
+具体支持的Markdown语法，参见[这里](./grammar.html)
 
 下载地址：[微软应用商店](https://www.microsoft.com/store/productId/9MX0MGJMJNBJ)
 

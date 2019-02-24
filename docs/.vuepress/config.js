@@ -68,6 +68,16 @@ module.exports = {
                     ['/document/pictureshare/qa', "常见问题"],
                 ]
             }],
+            '/document/acrmd': [{
+                title: 'Acrylic Markdown说明书',
+                collapsable: true,
+                children: [
+                    ['/document/acrmd/', "总览"],
+                    ['/document/acrmd/use', "快速开始"],
+                    ['/document/acrmd/module',"功能概览"],
+                    ['/document/acrmd/grammar',"语法综述"],
+                ]
+            }],
             '/document/basic': [{
                 title: '基础文档',
                 collapsable: true,
@@ -124,6 +134,10 @@ module.exports = {
             md.use(require('markdown-it-footnote'));
             md.use(require('markdown-it-task-lists'));
             md.use(require('markdown-it-mark'));
+            md.use(require('markdown-it-katex'));
+            md.use(require("markdown-it-sup"));
+            md.use(require("markdown-it-sub"));
+            md.use(require("markdown-it-plantuml"));
         }
     }
 }
