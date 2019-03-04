@@ -75,7 +75,9 @@ module.exports = {
                     ['/document/acrmd/', "总览"],
                     ['/document/acrmd/use', "快速开始"],
                     ['/document/acrmd/module',"功能概览"],
+                    ['/document/acrmd/shortcut',"快捷操作"],
                     ['/document/acrmd/grammar',"语法综述"],
+                    ['/document/acrmd/history',"更新历史"],
                 ]
             }],
             '/document/basic': [{

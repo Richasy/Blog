@@ -725,3 +725,71 @@ Header : {
 - `isDiscovered`: 是否出现
 
 ---
+
+## 午夜电波
+
+|        请求地址       |请求方式|请求类型|返回数据|
+|:--------------------------------|:----:|:------|:----:|
+|/**nightwave**|  GET |   无  | JSON |
+
+### 请求结构
+
+```javascript
+Header : {
+    Authorization: 'Bearer xxxxxxxxxxxxxxxxxx'
+}
+```
+
+### 返回结构
+
+```json
+{
+    "id": "nightwave1557100800000",
+    "activation": "2019-02-25T00:00:00.000Z",
+    "startString": "-7d 2h 46m 12s",
+    "expiry": "2019-05-06T00:00:00.000Z",
+    "active": true,
+    "season": 0,
+    "tag": "Radio Legion Syndicate",
+    "phase": 0,
+    "params": {
+        "wgsc": 2,
+        "wsr": 0.01
+    },
+    "possibleChallenges": [],
+    "activeChallenges": [{
+        "id": "000100000000000000000016",
+        "activation": "2019-03-02T00:00:00.000Z",
+        "startString": "-2d 2h 46m 12s",
+        "expiry": "2019-03-05T00:00:00.000Z",
+        "active": true,
+        "isDaily": true,
+        "isElite": false,
+        "desc": "Pick up 8 Mods",
+        "title": "Shiny",
+        "reputation": 1000
+    }
+	...],
+    "rewardTypes": ["credits"]
+}
+
+```
+
+### 数据说明
+
+- `activeChallenges` : 当前的午夜电波任务
+
+- `activeChallenges.active` : 指示该任务是否正在进行
+
+- `activeChallenges.isDaily` : 是否为日常任务（倘若该任务为周常任务，则不存在该字段）
+
+- `activeChallenges.isElite`: 是否为精英任务
+
+- `activeChallenges.reputation`: 该任务的声望值
+
+- `activeChallenges.title`/`activeChallenges.desc`:该任务的标题/描述。关于标题/描述的翻译，参见[附录1](./appendix_1)内的`WF_NightWave`表
+
+---
+
+
+

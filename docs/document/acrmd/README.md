@@ -3,7 +3,7 @@ title: Acrylic Markdown
 lang: zh
 ---
 
-![Acrylic Markdown](https://storage.live.com/items/51816931BAB0F7A8!12063?authkey=AO7QXpgYo7-5DUU "Acrylic Markdown")
+![acrmd_title.png](https://storage.live.com/items/51816931BAB0F7A8!12194?authkey=AO7QXpgYo7-5DUU)
 
 Acrylic Markdown是一款基于Windows通用应用平台（UWP）的应用，设计精美而功能实用。
 
