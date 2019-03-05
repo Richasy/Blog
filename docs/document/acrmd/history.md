@@ -5,7 +5,13 @@ lang: zh
 
 # Acrylic Markdown更新历史记录
 
-## V 3.1.1
+## V3.1.2
+
+新增：
+
+1. 添加对 `Timeline` 的支持
+
+## V3.1.1
 
 改进：
 

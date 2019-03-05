@@ -14,7 +14,7 @@ API数据来源：[WFCD/warframe-worldstate-parser](https://github.com/WFCD/warf
 
 /wfa/basic/{platform}
 
-- `platform` : 平台代码，可选值参照[游戏平台可选值](/document/wfa/api/api_doc.html#游戏平台可选值)
+- `platform` : 平台代码，可选值参照[游戏平台可选值](/document/wfa/api#游戏平台可选值)
 
 ## 希图斯信息
 
