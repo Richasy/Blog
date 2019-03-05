@@ -89,17 +89,19 @@ module.exports = {
                     ['/document/basic/onedrive_authkey', "获取OneDrive授权码"],
                 ]
             }],
-            '/code/web': [{
-                title: '网页技术杂谈',
+            '/code/web/vue': [{
+                title: 'Vue相关',
                 collapsable: true,
                 children: [
-                    ['/code/web/others/', '其他零散知识'],
+                    ['/code/web/vue/','Vue相关'],
+                    ['/code/web/vue/use_electron_with_vue', 'Vue与Electron的混合开发环境搭建']
                 ]
             }],
             '/code/web/others': [{
                 title: '其他知识',
                 collapsable: true,
                 children: [
+                    ['/code/web/others/', '其他知识'],
                     ['/code/web/others/use_request_with_authorize', '使用带请求头的Web请求']
                 ]
             }],

@@ -1,6 +1,8 @@
 ---
 title: Vue与Electron开发环境的简易搭建
 lang: zh
+sidebar: auto
+sideDepth: 2
 ---
 
 # Vue与Electron开发环境的简易搭建
@@ -305,7 +307,7 @@ yarn electron-build
 ```json
 {
   ...
-  "electron-build":"yarn build & electron-builder --dir --win --x64"
+  "electron-build":"yarn build & electron-builder --win --x64"
 }
 
 ```

@@ -1,8 +1,15 @@
 ---
-title: 序
+title: 网页技术
 lang: zh-CN
-home: false
+home: true
 ---
-# 网页技术
 
-暂时还没想好写什么
+<div class="homeNavContainer">
+
+- [Vue](/code/web/vue/)
+  Vue相关知识
+
+- [其他](/code/web/others/)
+  其他网页内容
+
+</div>
