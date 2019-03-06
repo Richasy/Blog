@@ -99,9 +99,9 @@ module.exports={
 
 运行：
 ```sh
-yarn add electron
+yarn add electron --dev
 #or
-npm install electron --save
+npm install electron --save--dev
 ```
 
 完成后，在项目根目录中建立`main.js`文件，并在其中写入：
@@ -224,6 +224,14 @@ yarn run electron
 
 这里我们选用`electron-builder`。
 
+运行：
+
+```sh
+yarn add electron-builder --dev
+# or
+npm install electron-builder --save--dev
+```
+
 使用`electron-builder`，需要在`package.json`中添加如下内容：
 
 ```json
@@ -271,7 +279,7 @@ yarn run electron
 
 ```
 
-图标文件自己做，没有就不写。同时将`dependencies`中的`electron`和`electron-builder`移到`devDependencies`中，否则无法生成哟~
+图标是可选项，没有就不写
 
 另外`build`中的`productName`最好与根层级的`name`同名，否则也可能出现构建失败的情况。
 
@@ -292,7 +300,7 @@ yarn run electron
   }
 ```
 
-这段脚本的意思就是先将当前网页打包输出到 dist 文件夹中，再通过electron-builder对其进行打包，打包完成之后，会输出到当前项目目录下的`build`文件夹中。
+这段脚本的意思就是先将当前网页打包输出到 dist 文件夹中，再通过electron-builder对其进行打包，打包完成之后，会输出到当前项目目录下的`build`文件夹中 *（此时生成的是一个文件夹，而不是安装包）* 。
 
 现在，打开终端，运行一下吧：
 
