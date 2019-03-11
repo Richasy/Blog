@@ -118,6 +118,7 @@ module.exports = {
                 collapsable: true,
                 children: [
                     ['/code/uwp/', 'UWP相关杂谈'],
+                    ['/code/uwp/uwp_desktop_diff', 'UWP与传统桌面应用的差异'],
                 ]
             }],
             '/code/csharp': [{
