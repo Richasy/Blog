@@ -3,7 +3,7 @@ title: 在IIS上部署 .Net Core服务
 lang: zh
 ---
 
-# 在IIS上部署 .Net Core ``服务
+# 在IIS上部署 .Net Core 服务
 
 :::tip
 如果你不知道怎么在自家电脑上开启IIS服务器，请参照[启用IIS服务器](./open_iis)
@@ -20,10 +20,6 @@ lang: zh
 ![blog_web_others_netcore_01.png](https://storage.live.com/items/51816931BAB0F7A8!12428?authkey=AO7QXpgYo7-5DUU)
 
 进入下载页面后，先别急着下载。如果你是准备部署某个 .Net Core的软件包，那么务必搞清楚它是基于哪个 .Net Core的版本构建的，如果下载了错误的包，那软件是运行不起来的。
-
-.Net Core在安装环境包时也会出现一些奇怪的问题，这些问题往往出现在低版本的Windows上，比如Win7或者Windows Server 2008。这些系统在安装时可能会报错，其原因往往是补丁没有打上，或者不满足最低运行的系统版本。
-
-具体的支持版本和遇到安装问题的解决方法点[这里](https://docs.microsoft.com/en-us/dotnet/core/windows-prerequisites?tabs=netcore2x)
 
 截至我写此文时，.Net Core的最新正式版本为2.2系列，如果你手头上的安装包基于更老的版本，需要进入[历史下载](https://dotnet.microsoft.com/download/archives)页面去找寻对应的安装包。
 
@@ -67,3 +63,20 @@ lang: zh
 
 ## 练个手
 
+假使你还没有一个可以部署的 .Net Core软件包，那么可以试试我给你的这个：
+
+[下载地址](https://github.com/Richasy/HTML-Conversion-Api/releases)
+
+你可以下载最新版本的 `Source Code`，虽然名为Source Code，但它其实是个Web Api的部署包，是用来进行HTML转PDF的。
+
+将其下载下来并解压，按照之前的过程针对这个软件建一个网站，然后你可以通过以下路径访问：
+
+==http://your_server/api/values==
+
+如果返回
+
+```json
+["value1","value2"]
+```
+
+那就说明部署成功啦~

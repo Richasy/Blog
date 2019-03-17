@@ -75,6 +75,7 @@ module.exports = {
                     ['/document/acrmd/', "总览"],
                     ['/document/acrmd/use', "快速开始"],
                     ['/document/acrmd/module',"功能概览"],
+                    ['/document/acrmd/conversion',"部署转换服务"],
                     ['/document/acrmd/shortcut',"快捷操作"],
                     ['/document/acrmd/grammar',"语法综述"],
                     ['/document/acrmd/history',"更新历史"],
@@ -102,7 +103,9 @@ module.exports = {
                 collapsable: true,
                 children: [
                     ['/code/web/others/', '其他知识'],
-                    ['/code/web/others/use_request_with_authorize', '使用带请求头的Web请求']
+                    ['/code/web/others/use_request_with_authorize', '使用带请求头的Web请求'],
+                    ['/code/web/others/open_iis', '启用IIS服务器'],
+                    ['/code/web/others/deploy_netcore', '在IIS上部署.Net Core包'],
                 ]
             }],
             '/code/powershell': [{
