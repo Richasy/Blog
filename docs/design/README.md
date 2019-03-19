@@ -9,7 +9,7 @@ home: true
 - [优质外文](/design/translate/)
   表示这是对国外优质文章的翻译存档
 
-- [原文](/design/thinking/)
+- [我的思考](/design/thinking/)
   通常省略，表示这是我自己的设计思考
 
 - [文档](/design/rules/)

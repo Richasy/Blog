@@ -44,6 +44,14 @@ module.exports = {
                     ['/design/translate/2019uiux_design_trends', '2019年UI&UX设计趋势'],
                 ]
             }],
+            '/design/thinking':[{
+                title:'我的思考',
+                collapsable:true,
+                children:[
+                    ['/design/thinking/','序'],
+                    ['/design/thinking/uwp_desktop_diff', 'UWP与传统桌面应用的差异']
+                ]
+            }],
             '/document/wfa/api': [{
                 title: 'WFA-API文档',
                 collapsable: true,
@@ -116,12 +124,12 @@ module.exports = {
                     ['/code/powershell/use_baidupcsgo', '使用BaiduPCS-Go干掉百度云限速']
                 ]
             }],
-            '/code/uwp': [{
-                title: 'UWP相关杂谈',
-                collapsable: true,
-                children: [
-                    ['/code/uwp/', 'UWP相关杂谈'],
-                    ['/code/uwp/uwp_desktop_diff', 'UWP与传统桌面应用的差异'],
+            '/code/uwp':[{
+                title:'UWP小书',
+                collapsable:true,
+                children:[
+                    ['/code/uwp/','序章'],
+                    ['/code/uwp/uwp_setup','Visual Studio的安装与配置']
                 ]
             }],
             '/code/csharp': [{
