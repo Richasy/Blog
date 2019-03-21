@@ -130,8 +130,9 @@ module.exports = {
                 children:[
                     ['/code/uwp/','序章'],
                     ['/code/uwp/uwp_setup','Visual Studio的安装与配置'],
-                    ['/code/uwp/uwp_newapp','创建一个新应用'],
-                    ['/code/uwp/uwp_usebutton','一个小按钮']
+                    // ['/code/uwp/uwp_newapp','创建一个新应用'],
+                    // ['/code/uwp/uwp_usebutton','一个小按钮'],
+                    // ['/code/uwp/uwp_xaml','谈谈XAML'],
                 ]
             }],
             '/code/csharp': [{
