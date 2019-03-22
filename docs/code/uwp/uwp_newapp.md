@@ -36,7 +36,7 @@ lang: zh
 ![uwp_first_app_03.png](https://storage.live.com/items/51816931BAB0F7A8!12441?authkey=AO7QXpgYo7-5DUU)
 
 :::tip
-由于我们接下来的数节课都会围绕这个新建立的APP展开，所以请认真对待哟~  
+由于我们下节课也会围绕这个新建立的APP展开，所以请认真对待哟~  
 会使用Git的童鞋可以新建Git存储库，通过Git记录自己的学习过程
 :::
 
@@ -251,8 +251,9 @@ Page的`Content`属性只允许其中有一个元素，换句话说，里面只�
 
 1. 更改文本的字体（FontFamily）
 2. 更改文本的对齐方式（TextAlignment）
-2. 试试改变TextBlock的位置，设置为左上，右上，右下，左下
-3. 新建一个TextBlock控件，写上很多字，形成如下排版：
+3. 更改文本颜色（Foreground）
+4. 试试改变TextBlock的位置，设置为左上，右上，右下，左下
+5. 新建一个TextBlock控件，写上很多字，形成如下排版：
     ![uwp_first_app_08.png](https://storage.live.com/items/51816931BAB0F7A8!12446?authkey=AO7QXpgYo7-5DUU)
     - Grid造成文本重叠的话，试试StackPanel
     - 文本不能自动换行的话，试试`MaxWidth`和`TextWrapping`的组合
