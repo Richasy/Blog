@@ -94,7 +94,7 @@ Grid，中文称之为网格，实际上我们叫它表格也不无不可。就�
 
 当你写好之后，运行应用，你可能会很惊讶的发现，这四个矩形天各一方了。
 
-![uwp_grid_01.png](https://storage.live.com/items/51816931BAB0F7A8!12460?authkey=AO7QXpgYo7-5DUU)
+![uwp_grid_01.png](https://storage.live.com/items/51816931BAB0F7A8!12469?authkey=AO7QXpgYo7-5DUU)
 
 这是什么原因呢？咱们来分析一波：
 
@@ -166,4 +166,23 @@ Grid控件有一个默认的特性，那就是占据父容器的全部剩余空�
 
 ![uwp_grid_02.png](https://storage.live.com/items/51816931BAB0F7A8!12462?authkey=AO7QXpgYo7-5DUU)
 
-不要觉得难度高，其实不难，而且还是我带着你做
+不要觉得难度高，其实不难，而且还是我带着你做，请看视频：
+
+(暂无视频)
+
+## 小结
+
+本章带你学习了网格布局，并通过一个看上去难度颇高，但实际一般般的排版帮你巩固了网格排版的相关知识。
+
+总的来说，网格布局着眼于大处，即整个页面的布局谋篇。在小地方的排版（比如字母排列、色块排列）就有些繁琐。在这些地方，`StackPanel`或`RelativePanel`反倒比较好用。所以布局控件往往是结合使用的。如何充分认识到布局控件的特性并善加利用，这个是学习布局控件的要点。
+
+## 延伸阅读
+
+- [Grid](https://docs.microsoft.com/zh-cn/uwp/api/windows.ui.xaml.controls.grid)
+- [UWP页面布局概述](https://docs.microsoft.com/zh-cn/windows/uwp/design/layout/page-layout)
+
+## 小尝试
+1. 再尝试自己写一次布局，不依托视频。
+2. 通过Grid实现如Windows设置一般的排版(不要求列出全部设置，但至少包含标题、搜索框(**AutoSuggestBox**)和两个列表项) 
+    
+    ![uwp_grid_03.png](https://storage.live.com/items/51816931BAB0F7A8!12468?authkey=AO7QXpgYo7-5DUU)

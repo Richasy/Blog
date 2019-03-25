@@ -44,11 +44,11 @@ module.exports = {
                     ['/design/translate/2019uiux_design_trends', '2019年UI&UX设计趋势'],
                 ]
             }],
-            '/design/thinking':[{
-                title:'我的思考',
-                collapsable:true,
-                children:[
-                    ['/design/thinking/','序'],
+            '/design/thinking': [{
+                title: '我的思考',
+                collapsable: true,
+                children: [
+                    ['/design/thinking/', '序'],
                     ['/design/thinking/uwp_desktop_diff', 'UWP与传统桌面应用的差异']
                 ]
             }],
@@ -82,11 +82,11 @@ module.exports = {
                 children: [
                     ['/document/acrmd/', "总览"],
                     ['/document/acrmd/use', "快速开始"],
-                    ['/document/acrmd/module',"功能概览"],
-                    ['/document/acrmd/conversion',"部署转换服务"],
-                    ['/document/acrmd/shortcut',"快捷操作"],
-                    ['/document/acrmd/grammar',"语法综述"],
-                    ['/document/acrmd/history',"更新历史"],
+                    ['/document/acrmd/module', "功能概览"],
+                    ['/document/acrmd/conversion', "部署转换服务"],
+                    ['/document/acrmd/shortcut', "快捷操作"],
+                    ['/document/acrmd/grammar', "语法综述"],
+                    ['/document/acrmd/history', "更新历史"],
                 ]
             }],
             '/document/basic': [{
@@ -102,7 +102,7 @@ module.exports = {
                 title: 'Vue相关',
                 collapsable: true,
                 children: [
-                    ['/code/web/vue/','Vue相关'],
+                    ['/code/web/vue/', 'Vue相关'],
                     ['/code/web/vue/use_electron_with_vue', 'Vue与Electron的混合开发环境搭建']
                 ]
             }],
@@ -124,15 +124,15 @@ module.exports = {
                     ['/code/powershell/use_baidupcsgo', '使用BaiduPCS-Go干掉百度云限速']
                 ]
             }],
-            '/code/uwp':[{
-                title:'UWP小书',
-                collapsable:true,
-                children:[
-                    ['/code/uwp/','序章'],
-                    ['/code/uwp/uwp_setup','Visual Studio的安装与配置'],
-                    ['/code/uwp/uwp_newapp','创建一个新应用'],
-                    // ['/code/uwp/uwp_usebutton','一个小按钮'],
-                    // ['/code/uwp/uwp_xaml','谈谈XAML'],
+            '/code/uwp': [{
+                title: 'UWP小书',
+                collapsable: true,
+                children: [
+                    ['/code/uwp/', '序章'],
+                    ['/code/uwp/uwp_setup', 'Visual Studio的安装与配置'],
+                    ['/code/uwp/uwp_newapp', '创建一个新应用'],
+                    ['/code/uwp/uwp_usebutton', '一个小按钮'],
+                    ['/code/uwp/uwp_xaml','谈谈XAML'],
                 ]
             }],
             '/code/csharp': [{

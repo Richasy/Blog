@@ -164,7 +164,7 @@ async/await是一对关键字，焦不离孟，孟不离焦。它们就是鼎鼎
 恭喜你，你会使用按钮了，那么要不要尝试一些其它的操作呢？
 
 1. 点击按钮，如果TextBlock中的文本是`Hello World`，就变成`你好，世界`，如果是`你好，世界`，就变成`Hello World`。
-2. 根据[延伸阅读](#延伸阅读)中有关对话框的内容，尝试修改MessageDialog中的按钮文本
+2. 根据[延伸阅读](#延伸阅读)中有关对话框的内容，尝试一个ContentDialog并修改主要按钮的文本
 3. 根据[延伸阅读](#延伸阅读)中有关按钮的内容，尝试让按钮文本变成下图所示的样子：
 
 ![uwp_usebutton_02.png](https://storage.live.com/items/51816931BAB0F7A8!12448?authkey=AO7QXpgYo7-5DUU)

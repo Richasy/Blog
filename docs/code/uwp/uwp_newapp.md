@@ -13,6 +13,8 @@ lang: zh
 - 如何修改控件属性，改变外观
 :::
 
+> 视频地址：[BiliBili](https://www.bilibili.com/video/av47065493/)
+
 让我们先无视掉复杂的基础知识，直接开始建立第一个UWP应用吧！
 
 ## 新建项目
