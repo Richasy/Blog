@@ -133,6 +133,7 @@ module.exports = {
                     ['/code/uwp/uwp_newapp', '创建一个新应用'],
                     ['/code/uwp/uwp_usebutton', '一个小按钮'],
                     ['/code/uwp/uwp_xaml','谈谈XAML'],
+                    ['/code/uwp/uwp_gridlayout','网格布局'],
                 ]
             }],
             '/code/csharp': [{
