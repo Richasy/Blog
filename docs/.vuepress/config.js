@@ -8,7 +8,16 @@ module.exports = {
         }],
         //['link', { rel: 'manifest', href: '/manifest.json' }],
     ],
-    plugins: ['@vuepress/back-to-top'],
+    plugins: ['@vuepress/back-to-top',[
+        'vuepress-plugin-rss',
+        {
+          base_url: '/', // required
+          site_url: 'https://blog.richasy.cn', // required
+          copyright: '2019 Richasy', // optional
+          // How much articles
+          count: 20
+        }
+    ]],
     themeConfig: {
         nav: [{
                 text: '技术文档',
