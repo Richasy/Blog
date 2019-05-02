@@ -11,6 +11,8 @@ lang: zh
 - StackPanel排版规则
 :::
 
+> 视频地址：[BiliBili](https://www.bilibili.com/video/av49066072/)
+
 ## StackPanel是什么？
 
 在之前讲文本排版时，我曾告诉大家可以使用StackPanel来让两个文本变成上下排列，不至于重叠。
