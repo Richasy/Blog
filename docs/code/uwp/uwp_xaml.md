@@ -1,6 +1,8 @@
 ---
 title: 谈谈XAML
 lang: zh
+date: 2019/5/3 20:45:12
+type: post
 ---
 
 # 谈谈XAML

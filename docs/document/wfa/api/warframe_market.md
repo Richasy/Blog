@@ -1,6 +1,8 @@
 ---
 title: WM 价格查询
 lang: zh-CN
+date: 2019/2/3 18:45:12
+type: post
 ---
 
 # Warframe Market 价格查询API

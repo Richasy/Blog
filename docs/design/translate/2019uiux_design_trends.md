@@ -1,6 +1,8 @@
 ---
 lang: zh-CN
 title: 译文-2019年UI & UX设计趋势分析
+date: 2019/4/1 18:45:12
+type: post
 ---
 
 *[3D纹理]: 3D Texture

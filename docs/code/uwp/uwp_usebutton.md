@@ -1,6 +1,8 @@
 ---
 title: 一个小按钮
 lang: zh
+date: 2019/5/3 21:45:12
+type: post
 ---
 
 # 一个小按钮

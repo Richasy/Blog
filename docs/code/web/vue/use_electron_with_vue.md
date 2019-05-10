@@ -3,6 +3,8 @@ title: Vue与Electron开发环境的简易搭建
 lang: zh
 sidebar: auto
 sideDepth: 2
+date: 2019/4/1 20:45:12
+type: post
 ---
 
 # Vue与Electron开发环境的简易搭建

@@ -1,6 +1,8 @@
 ---
 title: Acrylic Markdown快速上手
 lang: zh
+date: 2019/3/7 18:45:12
+type: post
 ---
 # Acrylic Markdown 快速上手
 

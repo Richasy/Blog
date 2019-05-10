@@ -2,6 +2,8 @@
 lang: zh-CN
 title: Picture Share常见问题
 sidebarDepth: 1
+date: 2019/3/2 18:45:12
+type: post
 ---
 
 # Picture Share 常见问题汇总

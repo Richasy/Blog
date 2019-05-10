@@ -3,6 +3,8 @@ lang: zh-CN
 title: 运用BaiduPCS-Go干掉百度云限速
 sidebar: auto
 sideDepth: 2
+date: 2019/4/11 20:45:12
+type: post
 ---
 
 # 百度云命令行下载工具 BaiduPCS-Go 介绍

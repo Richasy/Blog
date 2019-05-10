@@ -2,6 +2,8 @@
 lang: zh-CN
 title: 使用带验证的请求
 sidebar: auto
+date: 2019/3/25 20:45:12
+type: post
 ---
 
 # 如何使用附带令牌验证的请求

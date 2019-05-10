@@ -10,6 +10,7 @@ module.exports = (pluginOptions, ctx) => {
     generated () {
       const fs = require('fs-extra')
         var md=new markit().use(require('markdown-it-abbr'))
+        .use(require('markdown-it-emoji'))
         .use(require('markdown-it-footnote'))
         .use(require('markdown-it-task-lists'))
         .use(require('markdown-it-mark'))

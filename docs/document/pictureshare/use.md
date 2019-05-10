@@ -2,6 +2,8 @@
 lang: zh-CN
 title: Picture Share使用方法
 sidebarDepth: 2
+date: 2019/3/2 18:45:12
+type: post
 ---
 
 # 如何使用Picture Share

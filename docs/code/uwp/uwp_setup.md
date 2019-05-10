@@ -1,6 +1,8 @@
 ---
 title: Visual Studio的安装与配置
 lang: zh
+date: 2019/5/2 18:45:12
+type: post
 ---
 
 # 安装与配置

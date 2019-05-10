@@ -1,6 +1,8 @@
 ---
 title: Acrylic Markdown功能介绍
 lang: zh
+date: 2019/3/7 18:45:12
+type: post
 ---
 
 # Acrylic Markdown功能介绍

@@ -1,6 +1,8 @@
 ---
 title: 在IIS上部署 .Net Core服务
 lang: zh
+date: 2019/3/25 20:45:12
+type: post
 ---
 
 # 在IIS上部署 .Net Core 服务
