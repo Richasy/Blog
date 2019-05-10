@@ -98,6 +98,14 @@ module.exports = {
                     ['/document/acrmd/history', "更新历史"],
                 ]
             }],
+            '/document/rss': [{
+                title: 'RSS Stalker 说明书',
+                collapsable: true,
+                children: [
+                    ['/document/rss/', "总览"],
+                    ['/document/rss/use', "使用说明"],
+                ]
+            }],
             '/document/basic': [{
                 title: '基础文档',
                 collapsable: true,
@@ -145,6 +153,7 @@ module.exports = {
                     ['/code/uwp/uwp_gridlayout','网格布局'],
                     ['/code/uwp/uwp_stackpanel','堆放布局'],
                     ['/code/uwp/uwp_relativepanel','相对布局'],
+                    ['/code/uwp/uwp_learncontrol','如何学习新的控件'],
                 ]
             }],
             '/code/csharp': [{
