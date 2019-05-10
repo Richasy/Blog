@@ -9,7 +9,7 @@ module.exports = {
         //['link', { rel: 'manifest', href: '/manifest.json' }],
     ],
     plugins: ['@vuepress/back-to-top',[
-        'vuepress-plugin-rss',
+        require('./rssConfig.js'),
         {
           base_url: '/', // required
           site_url: 'https://blog.richasy.cn', // required
