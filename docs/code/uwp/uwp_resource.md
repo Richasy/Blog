@@ -14,6 +14,8 @@ lang: zh
 - 主题的切换
 :::
 
+视频地址：[BiliBili](https://www.bilibili.com/video/av54257809/)
+
 ## 前言
 
 上节课，我们讲述了基础的样式修改，以及公共样式的建立。

@@ -156,6 +156,7 @@ module.exports = {
                     ['/code/uwp/uwp_learncontrol','如何学习新的控件'],
                     ['/code/uwp/uwp_style','简单的样式修改'],
                     ['/code/uwp/uwp_resource','样式的作用域以及资源'],
+                    ['/code/uwp/uwp_template','控件模板概述'],
                 ]
             }],
             '/code/csharp': [{
