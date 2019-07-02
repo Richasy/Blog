@@ -50,10 +50,12 @@ UWP对PWA的赋能，更多地体现在平台特色功能上。随便举几个�
 
 那么如何根据这个项目创建一个UWP应用呢？非常简单，甚至不需要你修改现有代码。
 
-打开**VS2017** *（必须要是这个版本的`Visual Studio`）*。新建一个`Progressive Web App`项目。  
+打开**VS2017** *（必须要是这个版本的Visual Studio）*。新建一个`Progressive Web App`项目。  
 ![531a0d1c-ae65-41ca-b240-08d33b61a39f.png](https://storage.live.com/items/51816931BAB0F7A8!13425?authkey=AO7QXpgYo7-5DUU)
 
 我们可以观察新项目的目录结构，可以发现，新项目仅有几个标注为error错误页面，和一些UWP项目自带的图标文件、应用清单文件等。
+
+![7a4018c0-f653-4779-9d4d-d29749254705.png](https://storage.live.com/items/51816931BAB0F7A8!13430?authkey=AO7QXpgYo7-5DUU)
 
 这和我们平常的开发可不一样，看样子VS并没有为我们提供`index.html`等配套文件。奇怪，这些文件难道要我们自己创建吗？
 
@@ -85,9 +87,9 @@ UWP对PWA的赋能，更多地体现在平台特色功能上。随便举几个�
 
 ### 调用本地文件操作API的例子
 
-> 对于一个网页应用，`能读不能写`几乎是常态。你可以通过Input标签来获取文件，但很显然，如果你想保存什么文件到计算机上，步骤就要麻烦很多了，甚至要走许多弯路。但是依托于UWP，我们可以直接调用本地API帮助我们自如地实现文件的读写。
+> 对于一个网页应用，`能读不能写`几乎是常态。你可以通过Input标签来获取本机文件，但很显然，如果你想保存什么文件到计算机上，就要麻烦很多了，甚至要走许多弯路。但是依托于UWP，我们可以直接调用本地API帮助我们自如地实现文件的读写。
 
-新建一个简单的项目，文档结构如下所示：
+新建一个简单的项目（你可以使用喜欢的编辑器，比如VS Code），项目结构如下所示：
 
 ```
 IO
@@ -142,7 +144,8 @@ importButton.addEventListener('click', function () {
             sto.FileIO.readTextAsync(file).then((str) => {
                 input.value=str;
             })
-        }).catch((e) => {
+        })
+        .catch((e) => {
             console.log('读取文件失败')
         })
     }
@@ -156,13 +159,14 @@ exportButton.addEventListener('click', function () {
         if (text) {
             let picker = new sto.Pickers.FileSavePicker();
             picker.defaultFileExtension = '.txt';
-            picker.suggestedFileName = '文本文件.txt';
+            picker.suggestedFileName = 'Test.txt';
             picker.fileTypeChoices.insert('文本文件', ['.txt']);
             picker.suggestStartLocation = sto.Pickers.PickerLocationId.documentsLibrary;
             picker.pickSaveFileAsync()
             .then((file) => {
                 sto.FileIO.writeTextAsync(file,text);
-            }).catch((e) => {
+            })
+            .catch((e) => {
                 console.log('保存文件失败')
             })
         }
@@ -210,19 +214,164 @@ exportButton.addEventListener('click', function () {
 
 但仍有一些需要注意的问题。
 
-首要的便在于命名。
+**首要的便在于命名。**
 
-C#中的命名遵循帕斯卡规范，即每个单词首字母都大写，而Javascript多采用驼峰命名。而在调用WinRT API时，微软更改了方法和部分属性的命名方式，从帕斯卡变为了小驼峰。在没有代码提示的情况下，极易写错，这是一个大坑，而且特别容易犯，需要特别谨慎。
+C#中的命名遵循帕斯卡规范，即每个单词首字母都大写，而Javascript多采用驼峰命名。在调用WinRT API时，微软更改了方法和部分属性的命名方式，从帕斯卡变为了小驼峰。在没有代码提示的情况下，极易写错，这是一个大坑，在书写的时候应遵循以下规律：
 
-其次是支持的功能有限。
+1. 命名空间和类是帕斯卡写法
+2. 类的成员（包括方法和属性）是驼峰命名
+3. 事件名称纯小写
 
-尽管大多数特色功能都得到了支持，但只能作为补充。有些内容，比如Windows.UI.Controls里的内容就不可用。关于可用及不可用的API，MSDN并没有一个详尽的列表加以阐述，需要自行摸索。
+**其次是支持的功能有限。**
 
-最后则是调试问题。
+尽管大多数特色功能都得到了支持，但只能作为补充。有些内容，比如`Windows.UI.Controls`里的内容就不可用。关于可用及不可用的API，你可以参照[WinRT文档](https://docs.microsoft.com/zh-cn/microsoft-edge/windows-runtime)。
 
-就我们所编写的简单应用来说，调试不成问题，甚至还可以自如地打断点。
+**最后则是工作范围问题。**
 
-但现阶段，网页开发多依赖框架，而框架多会进行代码混淆，即便不进行代码混淆，在进行调试时，也很难去对单文件进行断点调试。
+你也看到了，我们调用WinRT API的途径是`window.Windows`，而在Service Worker中，`window`变量是不存在的，有的只是`self`，而`self.Windows`并不存在。所以这意味着一件事，在Service Worker中无法使用WinRT API。
 
-对于框架的解析能力欠佳，这也是一个问题。
+所以，我们并没有可能将Service Worker变成一个Runtime Component。
 
+## 与Service Worker结合推送消息
+
+尽管我们说，试图将Service Worker变为Runtime Component是一种徒劳。但这并不意味着我们不能借助Service Worker来配合工作了。
+
+假使我们需要用到消息推送。
+
+在前端中，消息推送早已有之，比如`web-push`。但这种消息推送只能用作信息展示。Win10的Toast Notification能做的事情远不止于此，它还可以添加按钮以进行交互。
+
+想要使用原生的Toast Notification，则势必要在前台进行触发。*这里的前台指的是与Service Worker相对应的主UI线程。*
+
+按照一般PWA的开发趋势，数据处理（不涉及前台UI交互）放在Service Worker中，我们可以简化成如下处理逻辑：
+
+**前台发起信息处理请求 --> Service Worker进行处理 --> 将处理结果发回前台 --> 前台弹出通知**
+
+### 调用通知模块
+
+我们要调用本地的Toast Notification，这涉及到WinRT API。
+
+那就先把这个弹出通知的方法写出来：
+
+```javascript
+/*
+ * data结构：
+ * {
+ *   title: string,
+ *   content: string
+ * }
+ */
+function sendMessage(data) {
+    let title = data.title;
+    let content = data.content;
+    if (window.Windows && window.Windows.UI.Notifications) {
+        let notify = window.Windows.UI.Notifications;
+        let xml =
+        `
+        <toast launch="app-defined-string">
+          <visual>
+              <binding template="ToastGeneric">
+                  <text hint-maxLines="1">${title}</text>
+                  <text>${content}</text>
+                  <image placement="appLogoOverride" hint-crop="circle" src="https://picsum.photos/48?image=883"/>
+              </binding>
+          </visual>
+          <actions>
+              <action content="查看更多细节" arguments="action=detail&amp;contentId=351" activationType="foreground"/>
+          </actions>
+        </toast>
+        `;
+        let doc=new Windows.Data.Xml.Dom.XmlDocument();
+        doc.loadXml(xml);
+        let notification = new notify.ToastNotification(doc);
+        notify.ToastNotificationManager.createToastNotifier().show(notification);
+    }
+}
+```
+
+这里的通知UI我们用一个XML字符串表示，关于通知的UI结构，可以参见[官方文档](https://docs.microsoft.com/zh-cn/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)。
+
+我们的通知包含了**LOGO**、**标题**、**文本**和一个**按钮**。我们希望达到一个效果：
+
+点击弹出通知的按钮，前台给予响应 *（即能捕获到对应的点击事件，并可以获取到按钮附带的参数）*
+
+在UWP中，Toast的激活分为前台和后台两种，由于PWA-UWP项目没有后台支持，所以这里仅考虑前台的情况。
+
+点击通知时，会激活软件，所以我们需要捕获软件的Activated事件。该事件由UWP框架提供，所以这里我们来看如何触发这一事件：
+
+```javascript
+if (window.Windows) {
+  Windows.UI.WebUI.WebUIApplication.addEventListener("activated", function (activatedEventArgs) {
+    if (activatedEventArgs.kind == Windows.ApplicationModel.Activation.ActivationKind.toastNotification) {
+      console.log(activatedEventArgs.argument);
+    }
+  });
+}
+```
+
+我们渲染出的网页就放在`WebUIApplication`之中，所以给这个容器注册一个`activated`事件即可。但软件激活有多种渠道，为了确保抓到我们需要的事件，需要做一个甄别，这个甄别就通过事件参数的`kind`属性来进行，对上号了，我们就处理附带的信息参数（这里只是简单的输出）
+
+我们现在完成了需要用到WinRT API的部分，接下来的事情就交由Javascript原生API来处理了。
+
+### 窗口与Service Worker通信
+
+首先建立一个`sw.js`的文件，并在主页注册它：
+
+```javascript
+if ("serviceWorker" in navigator) {
+   navigator.serviceWorker.register("/sw.js").then(function (registration) {
+     console.log("Service Worker registered with scope:", registration.scope);
+   }).catch(function (err) {
+     console.log("Service worker registration failed:", err);
+   });
+}
+```
+
+然后我们在`<body>`中写一个按钮，用以做我们的触发器：
+
+```html
+<body>
+  <button id="pushButton">推送消息</button>
+</body>
+```
+
+添加按钮的事件处理方法：
+
+```javascript
+let btn = document.querySelector('#pushButton');
+btn.addEventListener('click', function () {
+  // 利用postMessage和serviceWorker通信
+  navigator.serviceWorker.controller.postMessage('toast');
+})
+```
+
+在sw.js中捕获信息，进行数据处理，并返回给前台：
+
+```javascript
+self.addEventListener('message', event => {
+  if(event.data=='toast'){
+    self.clients.matchAll().then(function(clients){
+      clients.forEach(function(client){
+          // 向前台发送信息
+          client.postMessage(
+            {title:'后台信息',content:'来自后台的你'}
+          );
+      })
+    })
+  }
+})
+```
+
+既然serviceWorker回传了数据，那么前台就必须要接收才行：
+
+```javascript
+navigator.serviceWorker.addEventListener("message", function (event) {
+    // sendMessage方法是我们最开始就定义好的
+    sendMessage(event.data);
+});
+```
+
+现在可以运行一下软件试试了。点击按钮，屏幕右下方就会弹出通知，点击通知上的按钮，留意控制台的输出：
+
+![e2817abd-1f83-4110-969d-02ade71b144c.png](https://storage.live.com/items/51816931BAB0F7A8!13428?authkey=AO7QXpgYo7-5DUU)
+
+![8435a417-65d7-44a6-87d6-94f6dce7fb4d.png](https://storage.live.com/items/51816931BAB0F7A8!13429?authkey=AO7QXpgYo7-5DUU)
