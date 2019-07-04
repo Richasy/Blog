@@ -375,3 +375,20 @@ navigator.serviceWorker.addEventListener("message", function (event) {
 ![e2817abd-1f83-4110-969d-02ade71b144c.png](https://storage.live.com/items/51816931BAB0F7A8!13428?authkey=AO7QXpgYo7-5DUU)
 
 ![8435a417-65d7-44a6-87d6-94f6dce7fb4d.png](https://storage.live.com/items/51816931BAB0F7A8!13429?authkey=AO7QXpgYo7-5DUU)
+
+## 结语
+
+我们举了两个例子，这两个例子设计到的PWA的内容少，而WinRT的内容多，因为我们这篇文章的侧重点就在于此，但真要做PWA，依然要以网页技术为主。
+
+在传统UWP应用中，我们使用LocalSettings存放用户设置，使用本地文件来存放结构化数据。这些在网页技术中都有对应的内容，比如localStorage或indexDb。由于Service Worker中没有window，我们不能借助WinRT将PWA改造成一个完全的本地应用，事实上也完全没有必要。
+
+WinRT API只能在前台使用，这注定WinRT API的身份只是赋能，而不是革新。
+
+赋能何意？
+
+借助UWP的容器，实现本地化功能，获取一些仅本地应用才能获取的权限。
+
+但是除开这些，PWA应用本质上还是一个功能完整的网页应用。理论上不应该有任何重要功能依赖于WinRT，所以对于一个成熟的PWA项目来说，WinRT可以帮助应用获得更好的本地化体验，却不能成就它。
+
+就如同外国领导人新春时送上的一句中文祝福，或可以博一个亲民的彩头。但说与不说，都不会对两国关系有实质性影响。
+
