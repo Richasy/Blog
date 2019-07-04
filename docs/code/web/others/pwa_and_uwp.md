@@ -176,7 +176,7 @@ exportButton.addEventListener('click', function () {
 
 如果你之前开发过传统UWP应用，那么这里面的一些类你应该很熟悉，比如FileOpenPicker-文件选择器、FileSavePicker-文件保存器、FileIO-文件静态操作类等。
 
-> 相比起C#，Javascript的调用显然要复杂一些，需要写出完整的类名，即包含了命名空间的类名。再加上没有智能提示，没有自动引入，几乎每一次调用都需要查询相关文档，可以说是挺麻烦的了。
+> 相比起C#，Javascript的调用显然要复杂一些，需要写出完整的类名，即包含了命名空间的类名。
 
 所有这些WinRT API都被放在了window.Windows之中，所以每次调用的时候，都是先从这里开始。
 
@@ -376,9 +376,71 @@ navigator.serviceWorker.addEventListener("message", function (event) {
 
 ![8435a417-65d7-44a6-87d6-94f6dce7fb4d.png](https://storage.live.com/items/51816931BAB0F7A8!13429?authkey=AO7QXpgYo7-5DUU)
 
+## 借助Typescript实现智能提示
+
+用Javascript写代码有一个不太好的地方，即智能提示有限。尤其是在我们写WinRT相关API的时候，我想没谁记得住那一堆堆的API，尤其是全名。
+
+如果你不想在写的时候疯狂查文档，我想你需要试试Typescript。
+
+Typescript也是微软家的，你可以理解为是具备了静态类型检查功能的Javascript。静态类型的语言有一个好处就是类型确定，所有的属性、方法、字段都有定义，做起代码提示的时候就方便很多。
+
+在开始搞智能提示之前，请先安装好Typescript的相关环境，具体如何安装，并不是本文需要讲的内容，请读者自行查阅。
+
+假设你安装了Typescript，并对其有了一定的了解，现在开始我们的操作吧：
+
+### 新建一个WinJS的UWP项目
+
+Typescript想实现代码提示，需要有一个定义文件，后缀名为`.d.ts`。但是在官方的`@types`库中，并不存在window.Windows相关的定义文件。
+
+幸运的是，微软为了能让WinJS的项目可以正常工作，已经将WinRT的API定义文件写进了VS中，新建一个WinJS项目就是为了找到它。
+
+![dc698ebd-5f66-44a7-a738-2503ba7c9e1a.png](https://storage.live.com/items/51816931BAB0F7A8!13432?authkey=AO7QXpgYo7-5DUU)
+
+新建项目后，在项目管理列表窗口里打开所有隐藏文件，在如下目录中找到我们的目标文件：`winrtrefs.d.ts`
+
+![8aacd944-e17b-466b-8773-434564dabab9.png](https://storage.live.com/items/51816931BAB0F7A8!13433?authkey=AO7QXpgYo7-5DUU)
+
+### 引入定义文件
+
+得到了`winrtrefs.d.ts`文件之后，我们将其复制到我们的PWA项目中。
+
+:::tip
+如果你已有一个项目，且不好转换到Typescript，可以另起炉灶，将你要写的逻辑代码视作模块，单独编写，单独编译
+:::
+
+新建一个ts文件，我们在顶部对`.d.ts`文件进行引入：
+
+```typescript
+///<reference path="./winrtrefs.d.ts"/>
+```
+
+### 欺骗Typescript编译器
+
+前面两步其实很简单，就是复制+引入，做完之后你就已经拥有智能提示的能力了。
+
+当然，这需要编辑器的支持，我个人推荐使用**VS Code**。
+
+但是在Typescript中编写代码的时候还是会遇到问题。如果你直接书写`window.Windows`，编辑器会报错，说`Windows`并没有在`window`中定义。
+
+这就是静态类型检查和动态语言之间的矛盾了。我们明白Windows是在UWP容器下附加到window中的变量，事先当然不好定义。
+
+为了编译器放我们一马，这里要做一点处理：
+
+```typescript
+declare interface Window {
+    Windows: any;
+}
+```
+
+强行怼一个定义即可。
+
+接下来就可以享受代码提示带来的快感了：
+
+![15764430-b394-4e92-8182-09c7ad0677dd.png](https://storage.live.com/items/51816931BAB0F7A8!13435?authkey=AO7QXpgYo7-5DUU)
+
 ## 结语
 
-我们举了两个例子，这两个例子设计到的PWA的内容少，而WinRT的内容多，因为我们这篇文章的侧重点就在于此，但真要做PWA，依然要以网页技术为主。
+我们举了两个例子加一个技巧，这两个例子设计到的PWA的内容少，而WinRT的内容多，因为我们这篇文章的侧重点就在于此，但真要做PWA，依然要以网页技术为主。
 
 在传统UWP应用中，我们使用LocalSettings存放用户设置，使用本地文件来存放结构化数据。这些在网页技术中都有对应的内容，比如localStorage或indexDb。由于Service Worker中没有window，我们不能借助WinRT将PWA改造成一个完全的本地应用，事实上也完全没有必要。
 
@@ -392,3 +454,8 @@ WinRT API只能在前台使用，这注定WinRT API的身份只是赋能，而�
 
 就如同外国领导人新春时送上的一句中文祝福，或可以博一个亲民的彩头。但说与不说，都不会对两国关系有实质性影响。
 
+在新的Visual Studio 2019中，JS相关的UWP开发都已被移除。其实按道理来说，这种开发手段不应该这么激进地处理，考虑到微软放弃了当前的Edge浏览器，转投Chromium阵营。我猜测是原Edge团队内部出现了问题，导致Edge无法继续更新或更新频率过低（与Windows捆绑）。
+
+而不久前，微软正在开放基于Chromium的[WebView2](https://blogs.windows.com/msedgedev/2019/06/18/building-hybrid-applications-with-the-webview2-developer-preview/#TQ3BjLPkJG0DgVgV.97)的测试，所以乐观估计，JS终会回到UWP中，但会基于新的渲染内核，这可能是两个大版本之后的事情了。
+
+目前的PWA与UWP结合的事，了解即可。
