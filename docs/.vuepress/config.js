@@ -158,6 +158,7 @@ module.exports = {
                     ['/code/uwp/uwp_resource','样式的作用域以及资源'],
                     ['/code/uwp/uwp_template','控件模板概述'],
                     ['/code/uwp/uwp_binding_basic','绑定初步'],
+                    ['/code/uwp/uwp_listview_gridview_1','ListView 和 GridView (上)'],
                 ]
             }],
             '/code/csharp': [{
