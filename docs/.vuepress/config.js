@@ -159,6 +159,7 @@ module.exports = {
                     ['/code/uwp/uwp_template','控件模板概述'],
                     ['/code/uwp/uwp_binding_basic','绑定初步'],
                     ['/code/uwp/uwp_listview_gridview_1','ListView 和 GridView (上)'],
+                    ['/code/uwp/windwos10x_emulator','Windows10X 模拟器简单上手体验']
                 ]
             }],
             '/code/csharp': [{
