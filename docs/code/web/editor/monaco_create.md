@@ -1,4 +1,15 @@
+---
+title: Monaco 编辑器的创建
+lang: zh
+date: 2020/8/27 16:50
+type: post
+---
+
 # Monaco 编辑器的创建
+
+:::tip
+目前是临时记录，后续会进行文档补全
+:::
 
 ## 在调用create方法时的一些实用参数：
 

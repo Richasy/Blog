@@ -9,6 +9,6 @@ features:
 - title: 设计相关
   details: 做设计的时候总喜欢开些脑洞，有时候看到好的文章也会见猎心喜
 - title: 开发文档
-  details: 对于自己制作的软件，有一些需要文档说明的，我也会放在博客里，比如API说明啦，使用方法之类的
+  details: 对于自己制作的软件，有一些需要文档说明的，已转移至主站：www.richasy.cn
 footer: MIT Licensed | Copyright © 2019-present Richasy
 ---

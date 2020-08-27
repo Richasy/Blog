@@ -29,22 +29,10 @@ module.exports = {
             },
             {
                 text: '开发日志',
-                link: '/document/'
+                link: 'https://www.richasy.cn'
             },
         ],
         sidebar: {
-            '/document/wfa/qa': [{
-                title: 'WFA 常见问题',
-                collapsable: true,
-                children: [
-                    ['/document/wfa/qa/', "WFA常见问题"],
-                    ['/document/wfa/qa/setup_and_show', "安装与显示问题"],
-                    ['/document/wfa/qa/translate_and_toast', "翻译与通知问题"],
-                    ['/document/wfa/qa/wm_question', "WM价格查询问题"],
-                    ['/document/wfa/qa/riven_market', "紫卡市场问题"],
-                    ['/document/wfa/qa/others', "其他问题"],
-                ]
-            }],
             '/design/translate': [{
                 title: '优质外文',
                 collapsable: true,
@@ -61,66 +49,21 @@ module.exports = {
                     ['/design/thinking/uwp_desktop_diff', 'UWP与传统桌面应用的差异']
                 ]
             }],
-            '/document/wfa/api': [{
-                title: 'WFA-API文档',
-                collapsable: true,
-                children: [
-                    ['/document/wfa/api/', "API介绍"],
-                    ['/document/wfa/api/how_to_apply', "申请权限"],
-                    ['/document/wfa/api/authorize', "获取授权"],
-                    ['/document/wfa/api/warframe_status', "Warframe信息"],
-                    ['/document/wfa/api/warframe_market', "WM 价格查询"],
-                    ['/document/wfa/api/riven_market', "WFA紫卡市场"],
-                    ['/document/wfa/api/appendix_1', "附录1"],
-                    ['/document/wfa/api/appendix_2', "附录2"],
-                ]
-            }],
-            '/document/pictureshare': [{
-                title: 'PICTURE SHARE说明书',
-                collapsable: true,
-                children: [
-                    ['/document/pictureshare/', "总览"],
-                    ['/document/pictureshare/about', "关于PICTURE SHARE"],
-                    ['/document/pictureshare/use', "使用说明"],
-                    ['/document/pictureshare/qa', "常见问题"],
-                ]
-            }],
-            '/document/acrmd': [{
-                title: 'Acrylic Markdown说明书',
-                collapsable: true,
-                children: [
-                    ['/document/acrmd/', "总览"],
-                    ['/document/acrmd/use', "快速开始"],
-                    ['/document/acrmd/module', "功能概览"],
-                    ['/document/acrmd/conversion', "部署转换服务"],
-                    ['/document/acrmd/shortcut', "快捷操作"],
-                    ['/document/acrmd/grammar', "语法综述"],
-                    ['/document/acrmd/history', "更新历史"],
-                ]
-            }],
-            '/document/rss': [{
-                title: 'RSS Stalker 说明书',
-                collapsable: true,
-                children: [
-                    ['/document/rss/', "总览"],
-                    ['/document/rss/use', "使用说明"],
-                ]
-            }],
-            '/document/basic': [{
-                title: '基础文档',
-                collapsable: true,
-                children: [
-                    ['/document/basic/', "基础文档"],
-                    ['/document/basic/privacy', "隐私协议"],
-                    ['/document/basic/onedrive_authkey', "获取OneDrive授权码"],
-                ]
-            }],
             '/code/web/vue': [{
                 title: 'Vue相关',
                 collapsable: true,
                 children: [
                     ['/code/web/vue/', 'Vue相关'],
                     ['/code/web/vue/use_electron_with_vue', 'Vue与Electron的混合开发环境搭建']
+                ]
+            }],
+            '/code/web/editor': [{
+                title: '编辑器相关',
+                collapsable: true,
+                children: [
+                    ['/code/web/editor/', '编辑器'],
+                    ['/code/web/editor/monaco_create', 'Monaco 编辑器的创建'],
+                    ['/code/web/editor/monaco_theme', 'Monaco 编辑器主题定义'],
                 ]
             }],
             '/code/web/others': [{
