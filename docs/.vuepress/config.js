@@ -63,6 +63,7 @@ module.exports = {
                 children: [
                     ['/code/web/editor/', '编辑器'],
                     ['/code/web/editor/monaco_create', 'Monaco 编辑器的创建'],
+                    ['/code/web/editor/monaco_language', 'Monaco 编辑器语法定义'],
                     ['/code/web/editor/monaco_theme', 'Monaco 编辑器主题定义'],
                 ]
             }],
