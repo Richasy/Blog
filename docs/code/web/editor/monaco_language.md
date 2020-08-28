@@ -1,11 +1,11 @@
 ---
-title: Monaco 编辑器语言的定义
+title: Monaco 编辑器语法定义
 lang: zh
-date: 2020/8/28 14:50
+date: 2020/8/28 16:20
 type: post
 ---
 
-# Monaco 编辑器语言的定义
+# Monaco 编辑器语法定义
 
 :::tip
 目前是临时记录，后续会进行文档补全
