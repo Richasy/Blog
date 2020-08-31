@@ -7,9 +7,18 @@ type: post
 
 # Monaco 编辑器的创建
 
-:::tip
-目前是临时记录，后续会进行文档补全
-:::
+这篇博客的主要目的是用于从零开始利用monaco-editor创建一个Markdown编辑器。
+
+由于有着相对明确的目标，所以就不会面面俱到，只能说提供一些简单的参考。
+
+## 创建方式
+
+尽管这是第一步，但是我觉得我没什么必要把这一步写得很详细。因为我觉得官方文档和提供的示例已经足够使用了。
+
+- [官方文档](https://github.com/Microsoft/monaco-editor)
+- [代码示例](https://github.com/Microsoft/monaco-editor-samples/)
+
+也许你在使用一些诸如Vue, React之类的框架，其实这些框架都有对应的版本，比如 [monaco-editor-vue](https://www.npmjs.com/package/monaco-editor-vue) 和 [react-monaco-editor](https://www.npmjs.com/package/react-monaco-editor)，装起来更简单。
 
 ## 在调用create方法时的一些实用参数：
 

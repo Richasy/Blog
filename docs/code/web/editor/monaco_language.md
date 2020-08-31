@@ -11,9 +11,11 @@ type: post
 目前是临时记录，后续会进行文档补全
 :::
 
-## 官方语言定义仓库
+## 官方语言定义
 
-[monaco languages](https://github.com/microsoft/monaco-languages)
+- [Monaco Languages](https://github.com/microsoft/monaco-languages)
+
+- [Monarch](https://microsoft.github.io/monaco-editor/monarch.html)
 
 ## 定义语法
 
@@ -156,16 +158,8 @@ let language = {
 ```
 
 :::tip
-需要注意的是，`@rematch`通常会搭配`@pop`使用，目前尚不太清楚@pop的含义，但单独使用@rematch会报错，所以推断应该是一种表示阻断的语法，即语法的解析到当前块为止，不再继续向下解析了
+关于@rematch, @pop以及其它的语法，在官方文档[Monarch](https://microsoft.github.io/monaco-editor/monarch.html)中有着详细的解释。
 :::
-
-##### next、switch指向
-
-在涉及到嵌套式语法解析的时候，这种解析往往比较复杂，不是一行代码就能写下的，比如表格（Table），块级代码（Code Block）等。
-
-这种时候一般会通过`next`或者`switch`将下一步要解析的内容导向到其它规则，配合之前提到的用`@`表示引用的语法，构建灵活的语法解析。
-
-但彼之灵活，我之迷乱。markdown语法尚属简单，我都分析了好半天，其它的语言……还望各位自行揣摩吧。
 
 ### 构建语法配置
 
